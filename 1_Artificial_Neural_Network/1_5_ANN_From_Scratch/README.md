@@ -14,9 +14,21 @@ central difference: $\frac{L(w+h) - L(w-h)}{2h}$
 
 ## (a) Numerical Differentiation (Central Difference Approximation)
 
+
 $$\frac{\partial L}{\partial w_1} \approx \frac{L(w_1 + h, w_2, \dots, b) - L(w_1 - h, w_2, \dots, b)}{2h}$$
 
 Parameter Matrix & Gradient Matrix$$p[i] = \begin{bmatrix} w_{0,0} & w_{0,1} & \cdots \\ w_{1,0} & w_{1,1} & \cdots \\ \vdots & \vdots & \ddots \end{bmatrix}$$ $$\text{grad} = \begin{bmatrix} \frac{\partial L}{\partial w_{0,0}} & \frac{\partial L}{\partial w_{0,1}} & \cdots \\ \frac{\partial L}{\partial w_{1,0}} & \frac{\partial L}{\partial w_{1,1}} & \cdots \\ \vdots & \vdots & \ddots \end{bmatrix}$$
+
+
+* **X:** The features.
+* **y:** The target.
+* **f_loss:** Function that calculates the loss:
+  * **Binary classification:** Binary cross entropy
+  * **Multiclass classification:** Cross entropy
+  * **Regression:** Mean squared error
+* **f_predict:** Function that calculates $\hat{y}$ from $X$.
+* **parameters:** In a two-layer neural network, for example, it will be `wh`, `bh`, `wo`, `bo`.
+
 
 ## (b) Gradient Descent Formula (Parameter Update Rule)
 
